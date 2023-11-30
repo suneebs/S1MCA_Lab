@@ -148,13 +148,27 @@ display();
         }
     }
 
+    // revrseing linked list
+    void reverse(){
+        temp=head;
+        while (temp->next!=NULL)
+        {
+            temp=temp->next;
+        }
+        while (temp!=NULL)
+        {
+            printf("%d->",temp->data);
+            temp=temp->prev;
+        }
+        
+    }
 
 
 
 
     int ch=1,choice;
     while(ch){
-        printf("\n1.Insertion\n2.Deletion\n3.Display\n4.Exit\nEnter your choice\n");
+        printf("\n1.Insertion\n2.Deletion\n3.Display\n4.reverse\n5.exit\nEnter your choice\n");
         scanf("%d",&choice);
         switch(choice){
             case 1: insertion();
@@ -163,7 +177,9 @@ display();
                     break;
             case 3: display();
                     break;
-            case 4: exit(0);
+            case 4: reverse();
+                    break;
+            case 5: exit(0);
             default:printf("Enter valid choice");
         }
         printf("\nDo you want to continue?(0/1)\n");
