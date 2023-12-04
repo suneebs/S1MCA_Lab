@@ -1,0 +1,5 @@
+c=input("enter the list of colors seperated by comma\n")
+color=c.split(",")
+l=len(color)
+print("first color :",color[0])
+print("last color :",color[l-1])

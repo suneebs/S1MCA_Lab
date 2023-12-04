@@ -1,0 +1,3 @@
+import pyramidNum
+
+pyramidNum.pyramid()
