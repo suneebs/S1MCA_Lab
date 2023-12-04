@@ -101,6 +101,7 @@ void delete(){
 
     void beg_del()
     {
+        temp=head;
         while (temp->next != head)
         {
             temp=temp->next;
@@ -112,11 +113,29 @@ void delete(){
 
     }
     void end_del(){
-
+        temp=tail=head;
+        temp=temp->next;
+        while (temp->next != head)
+        {
+            temp=temp->next;
+            tail=tail->next;
+        }
+        tail->next=head;
+        free(temp);        
 
     }
     void pos_del(){
-
+        int pos;
+        printf("\nEnter the position to insert\n");
+        scanf("%d",&pos);
+        temp=tail=head;
+        temp=temp->next;
+        for(int i=1;i<pos-1;i++){
+            temp=temp->next;
+            tail=tail->next;
+        }        
+        tail->next=temp->next;
+        free(temp);
     }
 
     int choice;
@@ -136,6 +155,30 @@ void delete(){
             break;
     }
 }
+/////////////////////////////////////////////////////////////////////////////////////////
+//Search
+void search(){
+    int ele,i=1;
+    printf("Enter an element to search\n");
+    scanf("%d",&ele);
+    temp=head;
+    while (temp->next != head)
+    {
+        if(temp->data == ele){
+            printf("\nelement found at position %d",i);
+            break;
+        }
+        temp=temp->next;
+        i++;
+    
+    }
+    if (temp->data == ele && temp->next == head)
+    {
+        printf("\nelement found at position %d",i);
+    }
+    
+    
+}
 
 int choice,ch=1;
 
@@ -149,7 +192,8 @@ scanf("%d",&choice);
             break;
     case 2: delete();
             break;
-    case 3:
+    case 3:search();
+            break;
     case 4:display();
             break;
     case 5:exit(0);
