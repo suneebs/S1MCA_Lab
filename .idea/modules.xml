@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/David/David.iml" filepath="$PROJECT_DIR$/David/David.iml" />
+      <module fileurl="file://$PROJECT_DIR$/David/Q6 - impli_expli/Implicit Intent (next content)/Implicit Intent (next content).iml" filepath="$PROJECT_DIR$/David/Q6 - impli_expli/Implicit Intent (next content)/Implicit Intent (next content).iml" />
+      <module fileurl="file://$PROJECT_DIR$/David/Q6 - impli_expli/Q6 - impli_expli.iml" filepath="$PROJECT_DIR$/David/Q6 - impli_expli/Q6 - impli_expli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/mca.iml" filepath="$PROJECT_DIR$/.idea/mca.iml" />
+    </modules>
+  </component>
+</project>
