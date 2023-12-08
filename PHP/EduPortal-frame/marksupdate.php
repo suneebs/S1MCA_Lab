@@ -64,6 +64,7 @@ if (mysqli_num_rows($res)>0) {
     while ($row = mysqli_fetch_assoc($res)) {
         echo "<form action='marksupdate.php' method = 'post'><h3>";
         echo "<input type='hidden' name='sub' value=".$sub.">";
+        echo "<input type='hidden' name='id' value=".$id.">";
         echo "Series 1 :<input type ='text' name='s1' value=".$row['series1']."><br>";
         echo "Series 2 :<input type ='text' name='s2' value=".$row['series2']."><br>";
         echo "Assignment 1 :<input type ='text' name='a1' value=".$row['assign1']."><br>";
@@ -75,12 +76,13 @@ else
 echo "Not Available";
 }
 if(isset($_POST['update'])){
+    $id=$_POST['id'];
     $sub=$_POST['sub'];
     $ser1=$_POST['s1'];
     $ser2=$_POST['s2'];
     $assign1=$_POST['a1'];
     $assign2=$_POST['a2'];
-    $sql ="update marks set series1='$ser1',series2='$ser2',assign1='$assign1',assign2='$assign2' where subject='$sub'";
+    $sql ="update marks set series1='$ser1',series2='$ser2',assign1='$assign1',assign2='$assign2' where subject='$sub' and ktu_id='$id'";
     $r= mysqli_query($conn,$sql);
     if ($r) {
         echo "<script> alert('Marks updated');</script>";

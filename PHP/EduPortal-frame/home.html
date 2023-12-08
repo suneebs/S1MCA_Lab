@@ -5,14 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .main{
+            margin: 1rem;
+            padding: 2rem 2rem;
+            text-align: center;
+        }
+        h2{
+            color: antiquewhite;
+        }
+        .ele{
+            margin: 5rem;
+            display: inline-block;
+            border: 1px solid rgb(251, 250, 250);
+            padding: 1rem 1rem;
+            /* vertical-align: middle; */
+        
+            
+        }
+
+    </style>
 </head>
 <body style="background: url('https://getwallpapers.com/wallpaper/full/4/e/d/23625.jpg');background-repeat: no-repeat;">
    <div class="container">
     <marquee behavior="scroll"><h1 style="color: aliceblue;">WELCOME TO THE PORTAL</h1></marquee>
     <HR></HR>
     <div class="main">
-        
+        <a href="signin.php" target="f1" name="student" onclick="nameChange()">
+        <div class="ele">
+            <img src="download.png" height="150px" width="150px" alt="">
+            <h2>Student Login</h2>
+        </div></a>
+        <a href="signin.php" target="f1" name="admin">
+        <div class="ele">
+            <img src="download (1).png" height="150px" width="150px" alt="">
+            <h2>Admin Login</h2>
+
+        </div></a>
     </div>
    </div>
 </body>
 </html>
+
