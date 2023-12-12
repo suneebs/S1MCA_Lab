@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js"></script> -->
     <style>
         .main{
             margin: 1rem;
@@ -31,19 +32,20 @@
     <marquee behavior="scroll"><h1 style="color: aliceblue;">WELCOME TO THE PORTAL</h1></marquee>
     <HR></HR>
     <div class="main">
-        <a href="signin.php" target="f1" name="student" onclick="nameChange()">
+        <a href="signin.php?q=Hello, Student" name="student">
         <div class="ele">
             <img src="download.png" height="150px" width="150px" alt="">
             <h2>Student Login</h2>
         </div></a>
-        <a href="signin.php" target="f1" name="admin">
+        <a href="signin.php?q=Hello, Professor" name="admin">
         <div class="ele">
             <img src="download (1).png" height="150px" width="150px" alt="">
-            <h2>Admin Login</h2>
+            <h2 id="admin">Admin Login</h2>
 
         </div></a>
     </div>
    </div>
+   <!-- <button onclick="display()">here</button> -->
 </body>
 </html>
 

@@ -68,7 +68,7 @@ if (mysqli_num_rows($res)>0) {
         echo "Series 1 :<input type ='text' name='s1' value=".$row['series1']."><br>";
         echo "Series 2 :<input type ='text' name='s2' value=".$row['series2']."><br>";
         echo "Assignment 1 :<input type ='text' name='a1' value=".$row['assign1']."><br>";
-        echo "Assignmentn2 :<input type ='text' name='a2' value=".$row['assign2']."><br><br><br>";
+        echo "Assignment 2 :<input type ='text' name='a2' value=".$row['assign2']."><br><br><br>";
         echo "<button name='update' type='submit' value ='update'>Update</button><br><br></form>";
     }
 }
@@ -82,10 +82,11 @@ if(isset($_POST['update'])){
     $ser2=$_POST['s2'];
     $assign1=$_POST['a1'];
     $assign2=$_POST['a2'];
-    $sql ="update marks set series1='$ser1',series2='$ser2',assign1='$assign1',assign2='$assign2' where subject='$sub' and ktu_id='$id'";
+    $sum=($ser1+$ser2+$assign1+$assign2)/4;
+    $sql ="update marks set series1='$ser1',series2='$ser2',assign1='$assign1',assign2='$assign2',internal='$sum' where subject='$sub' and ktu_id='$id'";
     $r= mysqli_query($conn,$sql);
     if ($r) {
-        echo "<script> alert('Marks updated');</script>";
+        echo "<script> alert('Marks and internal updated');</script>";
     }
     else
     echo "error?!";

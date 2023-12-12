@@ -54,6 +54,7 @@ $result1 = mysqli_query($conn,$sqli);
         Series 2 : <input type="number" name ="s2"><br>
         Assignment 1 : <input type="number" name="a1"><br>
         Assignment 2 : <input type="number" name="a2"><br>
+        Attendance % : <input type="number" name="att"><br>
         <button name='submit' type="submit" value ="submit">Submit</button>
     </form>
 </body>
@@ -66,7 +67,9 @@ $ser1=$_POST['s1'];
 $ser2=$_POST['s2'];
 $assign1=$_POST['a1'];
 $assign2=$_POST['a2'];
-$insert = "insert into marks values ('$id','$sub','$ser1','$ser2','$assign1','$assign2')";
+$attend=$_POST['att'];
+$sum=($ser1+$ser2+$assign1+$assign2)/4;
+$insert = "insert into marks values ('$id','$sub','$ser1','$ser2','$assign1','$assign2','$attend','$sum')";
 $res = mysqli_query($conn,$insert);
 if ($res) {
     echo "<script> alert('Marks entered')</script>";

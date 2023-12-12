@@ -36,5 +36,22 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<td>".$row['sem']."</tr>";
     
 }
-echo "</table>";
+echo "</table><br><br>";
+
+$sqli="select * from marks";
+$res= mysqli_query($conn,$sqli);
+echo "<table class='center' border = 1><tr><th>KTU ID<th>SUBJECT <th>SERIES 1<th>SERIES 2 <th>ASSIGNMENT 1 <th>ASSIGNMENT 2 <th>ATTENDANCE<th>INTERNAL";
+while ($row = mysqli_fetch_assoc($res)) {
+    echo "<tr><td>".$row['ktu_id'];
+    echo "<td>".$row['subject'];
+    echo "<td>".$row['series1'];
+    echo "<td>".$row['series2'];
+    echo "<td>".$row['assign1'];
+    echo "<td>".$row['assign2'];
+    echo "<td>".$row['attendance']."%";
+    echo "<td>".$row['internal']."</tr>";
+    
+}
+echo "</table><br><br>";
+
 ?>

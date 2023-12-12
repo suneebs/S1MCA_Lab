@@ -14,16 +14,31 @@ $conn = mysqli_connect("localhost","root","","student");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <script src="script.js"></script> -->
+    <style>
+       h1,h2,h3{
+            color: antiquewhite;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+    </style>
 </head>
-<body>
+<body style="background: url('https://getwallpapers.com/wallpaper/full/4/e/d/23625.jpg');background-repeat: no-repeat;">
     <center>
         <form action="signin.php" method="post">
-            username: <input type="text" name="name" ><br>
-            password: <input type="password" name="pwd" ><br>
-            <input type="submit" value="submit" name='submit'><br>
-            <!-- No Account? <a href="signup.php">Sign up</a> -->
+            <h1 id='name' ><?php echo @$_GET['q']; ?>
+            <br><br>
+        </h1>
+            <!-- <input type="text" id='name'><br> -->
+            <h2>username: <input type="text" name="name" ></h2><br>
+            <h2>password: <input type="password" name="pwd" ></h2><br>
+                <input type="submit" id='btn'  value="submit" name='submit'><br>
+                <!-- No Account? <a href="signup.php">Sign up</a> -->
         </form>
     </center>
+   
 </body>
 </html>
 
@@ -47,7 +62,7 @@ header("Location: main.html");
 exit;
 }
     else
-    echo "No account? <a href= 'signup.php'>sign up</a> ";
+    echo "<center><h3>No account? <a href= 'signup.php'>sign up</a> ";
 }
 
 ?>
